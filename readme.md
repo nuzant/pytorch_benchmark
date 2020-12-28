@@ -34,4 +34,6 @@ On third node:
 python -m torch.distributed.launch --nproc_per_node=8 --nnodes=3 --node_rank=2 --master_addr="192.168.51.225" --master_port=1234 benchmark.py
 ```
 
-Argument `--nproc_per_node` defines number of processes invoked. Each process occupies 1 CPU and 1 GPU. 
+Argument `--nproc_per_node` defines number of processes invoked. Each process occupies 1 CPU and 1 GPU.
+
+If processes are stuck in the main loop, try switching distributed backend. (In benchmark.py, line 85 and 86)
